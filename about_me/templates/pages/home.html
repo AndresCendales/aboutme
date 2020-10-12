@@ -1,50 +1,46 @@
 <!--Main-->
-    <section id="main">
-        <nav>
-            <div class="toggle"></div>
-            <!--Logo-->
-            <a href="#" class="logo">AC</a>
 
-            <!--Menu-->
-            <ul class="menu">
-                <li class="active"><a href="#main" >Home</a></li>	
-                <li><a href="#about">About</a></li>	
-                <li><a href="#services">Services</a></li>	
-                <li><a href="#portfolio">Portfolio</a></li>		
-                <li><a href="#contact-form">Contact</a></li>	
-            </ul>
-            
-            <!--language-->
-            <a href="#" class="lang">En</a>
-        </nav>
+        
+        {% include 'pages/nav.html' %}
+        
 
+        <section id="main">        
         <!--name-->
-        <div class="name">
-            <!--hello-->
-            <p>Hello</p>
-            
-            <!--name-->
-            <h1>I'm <font color="#17d1ac">Andres</font> Cendales</h1>
-            
-            <!--details-->
-            <p class="details">
-                {% lorem 1 b random %} 
-            </p>
-            
+            <div class="mypicture">
+                <img src='/media/me-circle.png'>
+            </div>
+    
+            <div class="name">
+                <!--hello-->
+                <p>Hello</p>
+                
+                <!--name-->
+                <h1>I'm <font color="#17d1ac">Andres</font> Cendales</h1>
+                
+                <!--details-->
+                <p class="details">
+                    Cum accusamus pariatur aliquam sapiente possimus quos aut eligendi veritatis, 
+                    inventore sequi eaque, rerum temporibus sed laborum, dicta qui animi obcaecati est 
+                    cupiditate voluptas aperiam, laudantium numquam aperiam perferendis nihil quos atque?
+                    Voluptatem vel recusandae ut.
+                </p>
             <!--cv button-->
-            <a href="#" class="cv-btn">Download Cv</a>
+            {% comment %} <a href="#" class="cv-btn">Download Cv</a> {% endcomment %}
+    
+            <div class="social">
+                <a href="#"><i class="fab fa-github"></i></a>	
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
+        
+
 
         <!--down arrow-->
-        <div class="black-line" ></div>
+        {% comment %} <div class="black-line" ></div> {% endcomment %}
         
         <!--social-->
-        <div class="social">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>	
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>	
-        </div>
+
     </section>
 
     <!--About-->
@@ -54,7 +50,9 @@
         <div class="about-text">
             <h1>About Me</h1>
             <h2>Backend Developer</h2>
-            <p>{% lorem 2 b random %}</p>
+            <p>Incidunt nam cupiditate ullam voluptatum minus quis, placeat corrupti quod? 
+            Magni quidem explicabo quis recusandae velit quod cum? Necessitatibus quod ut 
+            laudantium non fuga sed distinctio at officiis molestias?</p>
             <button>View More Details</button>
         </div>
     </section>
@@ -65,12 +63,12 @@
         <!--heading-->
         <div class="s-heading">
             <h1>Services</h1>
-            <p>Here Is The Some Servies Which We Provide Yo.</p>
+            <p>Here Is The Some Servies Which We Provide You.</p>
         </div>    
 
         <!--services-box-container-->
         <div class="b-container">
-        {% for service in services %} 
+        {% for service in portfolio.0 %} 
             {% include 'pages/services_card.html' %}
         {% endfor %}   
         </div>
@@ -84,72 +82,9 @@
         
         <!--portfolio-container-->
         <div class="p-container">
-        
-            <!--portfolio-box-1-->
-            <div class="p-box">
-                <!--text-->
-                <div class="overlay-text">
-                    <h1>Box Title</h1>
-                    <p>Box Description</p>
-                </div>
-                <!--bg-img-->
-                <img src="images/w1.jpg">  
-            </div>
-
-            <!--portfolio-box-2-->
-            <div class="p-box">
-                <!--text-->
-                <div class="overlay-text">
-                    <h1>Box Title</h1>
-                    <p>Box Description</p>
-                </div>
-                <!--bg-img-->
-                <img src="images/w1.jpg">  
-            </div>
-
-            <!--portfolio-box-3-->
-            <div class="p-box">
-                <!--text-->
-                <div class="overlay-text">
-                    <h1>Box Title</h1>
-                    <p>Box Description</p>
-                </div>
-                <!--bg-img-->
-                <img src="images/w1.jpg">  
-            </div>
-
-            <!--portfolio-box-4-->
-            <div class="p-box">
-                <!--text-->
-                <div class="overlay-text">
-                    <h1>Box Title</h1>
-                    <p>Box Description</p>
-                </div>
-                <!--bg-img-->
-                <img src="images/w1.jpg">  
-            </div>
-
-            <!--portfolio-box-5-->
-            <div class="p-box">
-                <!--text-->
-                <div class="overlay-text">
-                    <h1>Box Title</h1>
-                    <p>Box Description</p>
-                </div>
-                <!--bg-img-->
-                <img src="images/w1.jpg">  
-            </div>
-
-            <!--portfolio-box-6-->
-            <div class="p-box">
-                <!--text-->
-                <div class="overlay-text">
-                    <h1>Box Title</h1>
-                    <p>Box Description</p>
-                </div>
-                <!--bg-img-->
-                <img src="images/w1.jpg">  
-            </div>
+            {% for project in portfolio.1 %} 
+                {% include 'pages/project_card.html' %}
+            {% endfor %} 
         </div>
     </section>
 
@@ -162,39 +97,4 @@
         <button >Contact Me</button>
     </section>
 
-    <!--contact-form-->
-    <section id="contact-form">
-        <form>
-            <!--left-->
-            <div class="contact-left">
-            <h1 class="c-l-heading">
-                <font style="border-bottom: 3px solid #1ED98B;">
-                Writ</font>e us
-            </h1>
-            <!--name-->
-            <div class="f-name">
-                <font >Name</font>
-                <input type="text" placeholder="Full Name"/>
-            </div>
-            <!--email-->
-            <div class="f-email">
-                <font >Email</font>
-                <input type="email" placeholder="Example@gmail.com"/>
-            </div>
-            </div>
-            <!--right-->
-            <div class="contact-right">
-            <!--message-->
-            <div class="message">
-                <font >Message</font>
-                <textarea name="message"
-                        rows="5"
-                        cols="20"
-                        placeholder="Write Message...">
-                </textarea>
-            </div>
-            <!--submit-btn-->
-            <button>submit</button>
-            </div>
-            
-        </form>
+    {% include 'pages/contact_form.html' %}
