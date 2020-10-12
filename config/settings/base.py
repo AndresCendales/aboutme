@@ -5,8 +5,7 @@ from pathlib import Path
 
 import environ
 
-#Deploy on heroku
-import django_heroku
+
 
 ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 
