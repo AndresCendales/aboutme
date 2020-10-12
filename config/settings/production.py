@@ -1,5 +1,7 @@
 from .base import *  # noqa
 from .base import env
+#Deploy on heroku
+import django_heroku
 
 # GENERAL
 # ------------------------------------------------------------------------------
