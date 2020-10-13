@@ -10,7 +10,7 @@ class Service(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField(blank=True)
     picture = models.ImageField(
-        upload_to='static/images/services/',
+        upload_to='staticfiles/images/services/',
         blank=True,
         null=True
     )
@@ -23,7 +23,7 @@ class Project(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
     picture = models.ImageField(
-        upload_to='static/images/projects/',
+        upload_to='staticfiles/images/projects/',
         blank=True,
         null=True
     )
